@@ -59,14 +59,20 @@ function getWinner() {
 function game() {
     playerScore =0;
     computerScore = 0;
-    let rounds = 5;
-    while(rounds>0) {
-        console.log(playRound(prompt("Choose Your Weapon"),getComputerChoice())+"\n");
-        console.log("Player Score: "+playerScore+"\nComputer Score: "+computerScore+"\n");
-        rounds--;
-    }
+    
     getWinner();
 }
 
+const rock = document.querySelector('#rock');
+const paper = document.querySelector('#paper');
+const scissors = document.querySelector('#scissors');
 
-
+rock.addEventListener('click', () => {
+   console.log(playRound('rock',getComputerChoice()));
+})
+paper.addEventListener('click', () => {
+    console.log(playRound('paper',getComputerChoice()));
+ })
+ scissors.addEventListener('click', () => {
+    console.log(playRound('paper',getComputerChoice()));
+ })
